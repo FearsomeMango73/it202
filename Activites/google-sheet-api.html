@@ -1,0 +1,70 @@
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Display data from Google Sheet</title>
+    </head>
+    <body>
+    
+    <h1>Display data from Google Sheet</h1>
+
+    
+    <button id="btnGetData" >Get Data</button>
+    <p id="results"></p>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script>
+        var baseUrl = 
+            "https://script.google.com/a/macros/uic.edu/s/AKfycbzo6rjnU9dAUZQARlmbdKdwYomK5anryvZE2g-Zjd-2ouiw4rY0/exec";
+        
+        var parameters = {
+            
+        }
+        
+        
+        $(function() {
+               
+               
+               $("#btnGetData").on("click", function() {
+                   
+                   $.ajax({
+                        url: baseUrl,
+                        dataType: 'jsonp',
+                        jsonpCallback: 'processResponse',
+                        data: parameters
+                        }
+                    );                   
+                   
+               })
+               
+               
+               
+
+        })
+        
+        function processResponse(data) {
+            if (data.length == 0) {
+               $("#results").text("no records found");
+               return false;
+            }
+            
+            var html;
+            
+            // display number of results
+            $("#results").append("Number of records found: " + data.length);
+            
+            // display record detail
+            $.each(data, function (idx,val) {
+                html = "<hr>";
+                $.each(val, function(k,v){
+                    html += k + ": " + v + "<br>";
+                })
+                $("#results").append(html);
+            })
+            
+            
+        }
+    </script>
+
+    </body>
+</html>

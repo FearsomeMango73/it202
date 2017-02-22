@@ -1,0 +1,110 @@
+/*
+function createIntro(){
+  ctx.font = "30px Arial";
+ctx.fillStyle = "black";
+ctx.textAlign = "center";
+ctx.fillText("Escape", canvas.width/2, canvas.height/2);
+  
+}
+
+ctx.beginPath();
+ctx.arc(95,50,40,0,2*Math.PI);
+ctx.stroke();
+
+
+set interval for a function to draw a thing
+setInterval(drawClock, 1000);
+
+
+how to draw an image to the canvas
+ var img = document.getElementById("scream");
+    ctx.drawImage(img, 10, 10);
+ctx.fillStyle = "#FF0000";
+ctx.fillRect(0,0,300,300);
+
+example for a 'character being drawn'
+function drawClock() {
+    drawFace(ctx, radius);
+}
+
+function drawFace(ctx, radius) {
+    var grad;
+
+    ctx.beginPath();
+    ctx.arc(0, 0, radius, 0, 2*Math.PI);
+    ctx.fillStyle = 'white';
+    ctx.fill();
+
+    grad = ctx.createRadialGradient(0,0,radius*0.95, 0,0,radius*1.05);
+    grad.addColorStop(0, '#333');
+    grad.addColorStop(0.5, 'white');
+    grad.addColorStop(1, '#333');
+    ctx.strokeStyle = grad;
+    ctx.lineWidth = radius*0.1;
+    ctx.stroke();
+
+    ctx.beginPath();
+    ctx.arc(0, 0, radius*0.1, 0, 2*Math.PI);
+    ctx.fillStyle = '#333';
+    ctx.fill();
+} */
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+        <style>
+          document, body {padding: 0; margin: 0;}
+          canvas {border: solid 10px black;}
+          
+          
+          </canvas>
+        </style>
+
+    </head>
+    <body>
+       <!-- <canvas id="myCanvas" width="200" height="100"></canvas> 
+
+<canvas id="myCanvas" width="wWidth" height="hHeight" 
+          style="border:1px solid #000000;">
+     
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+      <script>
+        $(function() {
+          var wWidth = $(window).width();
+          var hHeight = ($(window).height() / 2);
+          $("body").append($("MyCanvas").attr("width",wWidth).attr("height",hHeight));
+          
+        })
+        
+        var canvas = document.getElementById("myCanvas");
+        var ctx = canvas.getContext("2d");
+        ctx.fillStyle = "#FF0000";
+        ctx.fillRect(0,0,wWidth,hHeight);
+        
+      </script>
+      <h1>Escape</h1>
+      <h2>pick a character:</h2>
+      <ul>a young boy</ul>
+      <ul>a young girl</ul>
+      <p> It has been many years since you have been called a little ___. You have grown in many ways as you have lived your days trapped in a 8 by 8 cell as scientists tortured you to discover the truth. Your abilities make you a liability, but also a danger to those around you. Now, after 2 years of abuse and expermentation. Your transport vechicle is compromised and you can escape. </p>
+    </body>
+</html>
+-->
