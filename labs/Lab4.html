@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width">
+        <title>repl.it</title>
+        <style>
+          #canvas1 {
+            border: solid 2px blue;
+          }
+        </style>
+    </head>
+    <body>
+      <canvas id="canvas1" width="500" height="300" ></canvas>
+      <div id="divX"></div>
+      
+      <script>
+        var canvas = document.getElementById("canvas1");
+       // cavnas.fillstyle = "#001E62 ";
+        var ctx = canvas.getContext("2d");
+        
+        var divX = document.getElementById("divX");  // to show the circleX val
+        
+        var circleX = 100;
+        
+        ctx.fillStyle = "#D50032";
+        
+        function draw() {
+          ctx.clearRect(0,0,canvas.width,canvas.height);    // clear the canvas
+          circleX += 1;                                     // increment the x position
+          divX.innerText = "circleX = " + circleX;          // show the circleX value
+          ctx.beginPath();                                  // clear old path points
+          ctx.arc(circleX, 100,25,0, Math.PI *2);            // set points for an arc
+          ctx.fill();                                       // fill the arc
+          //requestAnimationFrame(draw);                      // call method again at next frame (FPS=60)
+       }
+        
+        requestAnimationFrame(draw);
+      </script>
+    </body>
+</html>
