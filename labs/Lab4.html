@@ -6,7 +6,11 @@
         <title>repl.it</title>
         <style>
           #canvas1 {
-            border: solid 2px blue;
+            border: solid 4px black;
+            background:  #001E62;
+          }
+          #canvas2 {
+          border: solid 4px black;
           }
         </style>
     </head>
@@ -15,27 +19,80 @@
       <div id="divX"></div>
       
       <script>
+       
+      
         var canvas = document.getElementById("canvas1");
-       // cavnas.fillstyle = "#001E62 ";
-        var ctx = canvas.getContext("2d");
+      //  var canvas2 = document.getElementById("canvas2");
+   //    canvas.fillstyle = "#001E62 ";
+       var ctx = canvas.getContext("2d");
+       // var ctx2 = canvas2.getContext("2d");
         
         var divX = document.getElementById("divX");  // to show the circleX val
         
-        var circleX = 100;
-        
+        var circleX = 250;
+        var circleY = 150
         ctx.fillStyle = "#D50032";
         
         function draw() {
-          ctx.clearRect(0,0,canvas.width,canvas.height);    // clear the canvas
-          circleX += 1;                                     // increment the x position
+          ctx.clearRect(0,0,canvas.width,canvas.height); // clear the canvas
+         // ctx.clearRect(0,0,canvas2.width,canvas2.height);
+         //need to have it continue in this direction until reach other side
+         var movement = 1;
+          if(circleX == 0){
+              circleX += 1;
+              
+          } 
+          else if(circleX == 500){
+                circleX -= 1;
+               
+           } 
+           else if(circleY == 0) {
+               
+               circleY += 1;
+               
+           }
+           else if(circleY == 300){
+                circleY -= 1;
+               
+           }
+           else{
+               circleX += 1;
+           }
+          //circleX += 1;                                     // increment the x position
           divX.innerText = "circleX = " + circleX;          // show the circleX value
           ctx.beginPath();                                  // clear old path points
-          ctx.arc(circleX, 100,25,0, Math.PI *2);            // set points for an arc
+          ctx.arc(circleX, circleY,50,0, Math.PI *2);            // set points for an arc
           ctx.fill();                                       // fill the arc
-          //requestAnimationFrame(draw);                      // call method again at next frame (FPS=60)
+          requestAnimationFrame(draw);                      // call method again at next frame (FPS=60)
        }
+       
+       function clear() {
+           ctx.clearRect(0,0,canvas.width,canvas.height); 
         
+       }
+       
+       
         requestAnimationFrame(draw);
+      //  requestAnimationFrame(clear);
+      
+    /*  <input type="text" onkeydown="myFunction(event)"> 
+      
+      function myFunction(event) {
+          var x = event.keyCode;
+          if (x == 120) {  // 27 is the ESC key
+             requestAnimationFrame(clear);
+         }
+        }
+        
+    <input type="text" onkeydown="myFunction(event)">      
+        function myFunction(event) {
+          var y = event.keyCode;
+          if (y == 117) {  // 27 is the ESC key
+             requestAnimationFrame(draw);
+         }
+        }
+        */
+      
       </script>
     </body>
 </html>
