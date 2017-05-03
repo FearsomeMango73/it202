@@ -68,15 +68,7 @@
    //  var startingApi = "https://api.edamam.com/search";
    //  var searchforRecipe ;
      
-    $(document).ready(function() {
-
-         $.getJSON("https://api.edamam.com/search?q=" + searchforRecipe + "&app_id=${43820b3f}&app_key=${f5a9a08c8308d8eef92a7988119cfaa1}", function(json) {
-      
-      
-      
-           };
-
-};
+   
       
       
       
@@ -114,9 +106,9 @@
                 <!--This is used to input a search term -->
                 <strong>
                  
-                    <form>
-                           <input type="text" placeholder="Search...">
-                             <input type="button" value="Search">
+                    <form id ="myForm">
+                           <input type="text" id ="Search" placeholder="Search...">
+                             <input type="button" id = "Submit" value="Search">
                      </form>
                   
                   </strong>
@@ -241,6 +233,40 @@
     <a href="https://github.com/google/material-design-lite/blob/mdl-1.x/templates/blog/" target="_blank" id="view-source" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-color--accent mdl-color-text--white">View Source</a>
     <script src="https://code.getmdl.io/1.3.0/material.min.js"></script>
   </body>
+  
+  <script type="text/javascript" src="">
+  
+  
+   $(document).ready(function() {
+
+
+
+      $(function() {
+                $('#myForm').on('submit', function () {
+                    var search = $('#search').val()
+                  //  alert(search)
+                   // return false
+                });
+    
+      $.getJSON("https://api.edamam.com/search?q=" + search + "&app_id=${43820b3f}&app_key=${f5a9a08c8308d8eef92a7988119cfaa1}", function(json) {
+      
+      
+      
+           };
+           
+      });
+    
+    
+    
+  </script>
+  
+  
+  
+  
+  
+  
+  
+  
   <script>
   
   
