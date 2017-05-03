@@ -247,12 +247,19 @@
                   //  alert(search)
                    // return false
                 });
+                
+      var url = "https://api.edamam.com/search";
+      
+      url += "?" + $.param({
+          'q' : "search",
+         'api-id' : "${43820b3f}" ,
+         'api-key': "${f5a9a08c8308d8eef92a7988119cfaa1}"
+        });
     
-      $.getJSON("https://api.edamam.com/search?q=" + search + "&app_id=${43820b3f}&app_key=${f5a9a08c8308d8eef92a7988119cfaa1}", function(json) {
-      
-      
-      
-           };
+                
+    $.get(url);
+    
+    //  $.getJSON("https://api.edamam.com/search?q=" + search + "&app_id=${43820b3f}&app_key=${f5a9a08c8308d8eef92a7988119cfaa1}", function(json) {  };
            
       });
     
